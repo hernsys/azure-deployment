@@ -1,5 +1,6 @@
 package com.example.azuredeployment.controllers;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,18 +19,24 @@ public class TestController {
 	
 	@GetMapping("/helloWorld")
 	public ResponseEntity<List<String>> helloWorld() {
-		List<String> result = Arrays.asList(configText, "test 222", "test 3 updated");
-		result.add("test 4");
-		result.add("test 5");
-		return new ResponseEntity<List<String>>(result, HttpStatus.OK);
+		List<String> result = new ArrayList<>();
+		try {
+			result = Arrays.asList(configText, "test 222", "test 3 updated");
+		} catch (Exception e) {
+			return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	
 	@GetMapping("/")
 	public ResponseEntity<List<String>> helloWorld1() {
-		List<String> result = Arrays.asList(configText, "test 21", "test 31 updated");
-		result.add("test 00");
-		result.add("test 01");
-		return new ResponseEntity<List<String>>(result, HttpStatus.OK);
+		List<String> result = new ArrayList<>();
+		try {
+			result = Arrays.asList(configText, "test 000", "test 0003");
+		} catch (Exception e) {
+			return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 
 }
