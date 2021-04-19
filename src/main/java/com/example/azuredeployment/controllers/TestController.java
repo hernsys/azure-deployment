@@ -23,5 +23,13 @@ public class TestController {
 		result.add("test 5");
 		return new ResponseEntity<List<String>>(result, HttpStatus.OK);
 	}
+	
+	@GetMapping("/helloWorld1")
+	public ResponseEntity<List<String>> helloWorld1() {
+		List<String> result = Arrays.asList(configText, "test 21", "test 31 updated");
+		result.add("test 41");
+		result.add("test 51");
+		return new ResponseEntity<List<String>>(result, HttpStatus.OK);
+	}
 
 }
