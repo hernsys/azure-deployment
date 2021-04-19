@@ -24,11 +24,11 @@ public class TestController {
 		return new ResponseEntity<List<String>>(result, HttpStatus.OK);
 	}
 	
-	@GetMapping("/helloWorld1")
+	@GetMapping("/")
 	public ResponseEntity<List<String>> helloWorld1() {
 		List<String> result = Arrays.asList(configText, "test 21", "test 31 updated");
-		result.add("test 41");
-		result.add("test 51");
+		result.add("test 00");
+		result.add("test 01");
 		return new ResponseEntity<List<String>>(result, HttpStatus.OK);
 	}
 
