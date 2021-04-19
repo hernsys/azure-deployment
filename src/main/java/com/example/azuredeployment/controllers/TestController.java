@@ -18,7 +18,7 @@ public class TestController {
 	
 	@GetMapping("/helloWorld")
 	public ResponseEntity<List<String>> helloWorld() {
-		List<String> result = Arrays.asList(configText, "test 2", "test 3 updated");
+		List<String> result = Arrays.asList(configText, "test 222", "test 3 updated");
 		result.add("test 4");
 		result.add("test 5");
 		return new ResponseEntity<List<String>>(result, HttpStatus.OK);
